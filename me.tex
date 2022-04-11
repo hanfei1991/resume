@@ -1,0 +1,172 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 }
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\newcommand{\hhref}[2]{\href{#1}{\underline{#2}}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{Han Fei} & Email : \hhref{mailto:hanfei19910905@gmail.com}{hanfei19910905@gmail.com}\\
+  Github : \hhref{https://github.com/hanfei1991}{hanfei1991} & Mobile : +8618515307397 \\
+\end{tabular*}
+
+%-----------Biography------------
+\section{About}
+  I'm a senior software engineer working in the database field and an open source enthusiast. Since I joined PingCAP in 2016,
+  I have endeavored to build the next generation database -- TiDB (\hhref{https://github.com/pingcap/tidb}{github/tidb}) project.
+  I played a crucial role in developing several important modules of TiDB, including Optimizer, Computation Engine, TiFlash and TiFlow project.
+  I'm adept at turning novel academic papers into productive code, and have rich experience in distributed databases.
+  My technique stack mainly concentrates on golang and cpp but I'd love to ramp up new languages and technologies.
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {PingCAP}{Shanghai, China}
+      {Senior Software Engineer}{April 2016 - Present}
+      \resumeItemListStart
+        \resumeItem{TiDB}
+          {TiDB is an open source database inspired by Google Spanner and implemented by Go language. It has been widely used by enterprises and users from all around the world (\hhref{https://en.pingcap.com/customers/}{check out our customers}).
+          I joined the TiDB team in a very early phase and led the development of the TiDB optimizer and SQL computation engine from 2016 to 2018. 
+          Right now I'm the sixth top contributor in the TiDB community.}
+      \resumeItemListStart
+        \resumeItem{TiDB Optimizer}
+          {TiDB Optimizer is a classic two-phase optimizer, which consists of rule-based and cost-based optimizing phases. I singlehandedly finished the early design and development. I also built the self-maintained statistics module and implemented the plan selection algorithm for TiDB optimizer (\hhref{https://drive.google.com/file/d/1HRK8XbsUMwCUaYR0Tof6HbLxzv-JohVA/view?usp=sharing}{slide}).
+          I am an expert in the SQL optimizer field and have read lots of classic papers to keep refining TiDB optimizer.
+          As a result, I specialize in integrating academic findings to implement complex algorithms.
+          }
+        \resumeItem{TiDB SQL Engine}
+          {I developed TiDB's first SQL computation engine according to volcano model, including Join, Aggregation, Filter operator and expression evaluation framework.}
+      \resumeItemListEnd
+        \resumeItem{TiFlash}
+          {TiFlash (\hhref{https://github.com/pingcap/tiflash}{pingcap/tiflash}) is the vectorized OLAP engine and columnar storage replica for TiDB. This project was originally based on ClickHouse database but developed their own storage engine and replication framework. 
+          TiFlash extends TiDB's analysis capability and makes TiDB a real HTAP database (\hhref{https://www.vldb.org/pvldb/vol13/p3072-huang.pdf}{VLDB paper}). 
+          Since 2018, I have been instrumental in the design and early development of TiFlash project. A lot of works are involved with compatibility with TiDB, including the DDL replication (\hhref{https://github.com/pingcap/tiflash/pull/103}{PR}) from TiDB, the MySQL Decimal type support (\hhref{https://github.com/pingcap/tiflash/pull/74}{PR ported from ClickHouse}), MySQL DateTime Type and MPP distributed computation framework (\hhref{https://github.com/pingcap/tiflash/pull/1111}{PR}).
+          }
+      \resumeItemListStart
+        \resumeItem{MPP Framework}{
+          As the main designer and main developer, I was responsible for TiFlash supporting massively parallel processing (\hhref{https://www.sisense.com/glossary/mpp-database/}{MPP}) architecture since 2020, which greatly expands TiFlash's computation capability (\hhref{https://drive.google.com/file/d/1OAoBk4_nw8mkMebRpEcu4y9w5Hh16Lfu/view?usp=sharing}{refer to the English design doc authored by me}). 
+          }
+      \resumeItemListEnd
+       \resumeItem{TiKV Client} {TiKV Client (\hhref{https://github.com/tikv/client-c}{tikv/client-c}) is implemented by cpp and grpc. It is mainly used in TiFlash to read, write meta data from TiKV and to resolve locks for TiFlash query. I was in charge of TiKV Client's design, test, development and further maintenance.}
+        \resumeItem{TiFlow}{TiFlow {\hhref{https://github.com/pingcap/tiflow}{(pingcap/tiflow)}} comprises CDC (\hhref{https://docs.pingcap.com/tidb/stable/ticdc-overview}{doc}) module which replicates data from TiKV to outside world and DM module (\hhref{}{doc}) which loads data from MySQL binlogs to TiDB. I joined TiFlow team in Sep 2021. }
+        \resumeItemListStart
+        \resumeItem{TiFlow Cloud Runtime} {
+          My teammates and I designed a new TiFlow runtime on public cloud and developed a prototype on my private repo (\hhref{https://github.com/hanfei1991/microcosm}{microcosm}).
+          This project is a scheduler and runtime to orchestrate CDC and DM tasks, and provides a unified interface for cloud users. I took part in the design, coding, test and deployment tools for an on-premise environment.
+        }
+        \resumeItemListEnd
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Alibaba}{Beijing, China}
+      {Software Engineer}{July 2014 - April 2016}
+      \resumeItemListStart
+        \resumeItem{Max-Compute Optimizer}
+          {Max Compute (\hhref{https://www.alibabacloud.com/product/maxcompute}{link}) is the cloud data warehouse on Alibaba Cloud. I developed Max Compute rule-based optimizer.}
+        \resumeItem{Stream Processing}{I built a distributed stream processing system in Alibaba.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Harbin Engineering University}{Harbin, China}
+      {Bachelor of Engineering in Computer Science and Technologies}{2009 -- 2014}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
